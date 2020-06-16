@@ -38,4 +38,4 @@ WORKDIR /project
 ENV PASSPHRASE=''
 ENV ENVIRONMENT='development'
 
-ENTRYPOINT ["./deploy.sh"]
+ENTRYPOINT ["/bin/ash"]
