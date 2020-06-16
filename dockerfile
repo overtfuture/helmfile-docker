@@ -10,9 +10,7 @@ ARG HELM_GIT_VERSION=0.7.0
 
 WORKDIR /
 
-RUN apk add sh
-
-RUN apk --update --no-cache add bash ca-certificates git gnupg curl gettext python3 jq && pip3 install gitpython~=2.1.11 requests~=2.22.0 PyYAML~=5.1.1 awscli
+RUN apk --update --no-cache add bash ca-certificates bash git gnupg curl gettext python3 jq && pip3 install gitpython~=2.1.11 requests~=2.22.0 PyYAML~=5.1.1 awscli
 
 ADD https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
@@ -40,4 +38,4 @@ WORKDIR /project
 ENV PASSPHRASE=''
 ENV ENVIRONMENT='development'
 
-ENTRYPOINT ["/bin/ash"]
+ENTRYPOINT ["/bin/bash"]
