@@ -31,7 +31,7 @@ RUN helm plugin install https://github.com/databus23/helm-diff --version ${HELM_
 ADD https://github.com/roboll/helmfile/releases/download/v${HELMFILE_VERSION}/helmfile_linux_amd64 /bin/helmfile
 RUN chmod 0755 /bin/helmfile
 
-VOLUME [ "/project", "/root/.kube", "/root/private.asc" ]
+VOLUME [ "/project", "/root/.kube"]
 
 WORKDIR /project
 
